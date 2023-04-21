@@ -4,7 +4,7 @@ import { faBookBookmark } from "@fortawesome/free-solid-svg-icons";
 import "./Blog.css";
 import { toast } from "react-toastify";
 
-const Blog = ({ post }) => {
+const Blog = ({ post,handleWatchTime,handleBookMark }) => {
   const { url, img, name, watchTime, date, title, blogTitle } = post;
   return (
     <div className="data-card card">
@@ -18,7 +18,7 @@ const Blog = ({ post }) => {
         <p>Watch Time : {watchTime} </p>
 
         <FontAwesomeIcon
-          //   onClick={() => handleBookMark(data)}
+            onClick={() => handleBookMark(post)}
           icon={faBookBookmark}
         />
       </div>
@@ -26,7 +26,7 @@ const Blog = ({ post }) => {
       <h6 className="ms-5">{title} </h6>
       <h4 className="ms-5">{blogTitle} </h4>
       <button
-        // onClick={() => handleWatchTime(data.watchTime)}
+        onClick={() => handleWatchTime(post.watchTime)}
         className="btn btn-info w-25 mb-3"
       >
         Mark as read

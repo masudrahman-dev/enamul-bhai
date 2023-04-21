@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from "react";
 import Blog from "../Blog/Blog";
 
-const Blogs = ({ data }) => {
-  console.log(data);
+const Blogs = ({ data, handleWatchTime, handleBookMark }) => {
+//   console.log(data);
   return (
     <div>
       <div className="data-container">
         {data.map((post) => (
-          <Blog key={post.id} post={post}></Blog>
+          <Blog
+            key={post.id}
+            post={post}
+            handleWatchTime={handleWatchTime}
+            handleBookMark={handleBookMark}
+          ></Blog>
         ))}
       </div>
     </div>

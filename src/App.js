@@ -37,17 +37,21 @@ function App() {
     const newArr = [...bookMark, mark];
     setBookMark(newArr);
     setBlogCount(blogCount + 1);
-    console.log(mark);
   };
+  console.log(bookMark);
 
   return (
     <div className="mt-5">
       <div className="main row">
         <div className="home-container col-md-8">
-          <Blogs data={data} handleWatchTime={handleWatchTime}></Blogs>
+          <Blogs
+            data={data}
+            handleWatchTime={handleWatchTime}
+            handleBookMark={handleBookMark}
+          ></Blogs>
         </div>
         <div className="cart-container col-md-4 card">
-          <BlogCart watchTime={watchTime}></BlogCart>
+          <BlogCart watchTime={watchTime} bookMark={bookMark}></BlogCart>
         </div>
       </div>
       <ToastContainer></ToastContainer>
