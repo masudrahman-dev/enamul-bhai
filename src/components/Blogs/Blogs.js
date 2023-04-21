@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+
 import Blog from "../Blog/Blog";
 
 const Blogs = ({ data, handleWatchTime, handleBookMark }) => {

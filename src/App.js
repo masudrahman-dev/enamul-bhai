@@ -4,8 +4,6 @@ import BlogCart from "./components/BlogCart/BlogCart";
 import Blogs from "./components/Blogs/Blogs";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Header from "./components/Header/Header";
-import BooksMark from "./components/BookMarks/BooksMark";
 
 function App() {
   // fetch data
@@ -30,15 +28,22 @@ function App() {
     }
   };
   // book mark count
-  const [blogCount, setBlogCount] = useState(0);
+
   // side bar books mark
   const [bookMark, setBookMark] = useState([]);
   const handleBookMark = (mark) => {
-    const newArr = [...bookMark, mark];
-    setBookMark(newArr);
-    setBlogCount(blogCount + 1);
+    const localData = JSON.parse(localStorage.getItem("cart-data"));
+
+    if (localData) {
+      const newArr = [...bookMark, localData, mark];
+      setBookMark(newArr);
+      localStorage.setItem("cart-data", JSON.stringify(newArr));
+    } else {
+      const newArr = [...bookMark, mark];
+      setBookMark(newArr);
+      localStorage.setItem("cart-data", JSON.stringify(newArr));
+    }
   };
-  console.log(bookMark);
 
   return (
     <div className="mt-5">
