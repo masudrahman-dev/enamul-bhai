@@ -12,7 +12,7 @@ const BlogCart = ({watchTime,blogTitle}) => {
         <div className='cart'>
             
             <h4 className='text-center'>Spent time on read :{time}  <span>min</span></h4>
-            <h1>Bookmarked Blogs :{blogTitle} </h1>
+            <h4>Bookmarked Blogs :{blogTitle} </h4>
             
         </div>
     );
