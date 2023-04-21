@@ -32,17 +32,20 @@ function App() {
   // side bar books mark
   const [bookMark, setBookMark] = useState([]);
   const handleBookMark = (mark) => {
-    const localData = JSON.parse(localStorage.getItem("cart-data"));
+    // const localData = JSON.parse(localStorage.getItem("cart-data"));
 
-    if (localData) {
-      const newArr = [...bookMark, localData, mark];
-      setBookMark(newArr);
-      localStorage.setItem("cart-data", JSON.stringify(newArr));
-    } else {
-      const newArr = [...bookMark, mark];
-      setBookMark(newArr);
-      localStorage.setItem("cart-data", JSON.stringify(newArr));
-    }
+    // if (localData) {
+    //   const newArr = [...bookMark, localData, mark];
+    //   setBookMark(newArr);
+    //   localStorage.setItem("cart-data", JSON.stringify(newArr));
+    // } else {
+    //   const newArr = [...bookMark, mark];
+    //   setBookMark(newArr);
+    //   localStorage.setItem("cart-data", JSON.stringify(newArr));
+    // }
+    const newArr = [...bookMark, mark];
+    setBookMark(newArr);
+    localStorage.setItem("cart-data", JSON.stringify(newArr));
   };
 
   return (
